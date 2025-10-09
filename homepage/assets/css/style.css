@@ -1,0 +1,175 @@
+/* Reset & Base Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* Prevent horizontal scroll */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Apply box-sizing globally */
+*, *::before, *::after {
+  box-sizing: inherit;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Body Styles */
+body {
+  background-image: url('../img/4021036.jpg');
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Futura', sans-serif;
+  font-weight: 700; /* Or 'bold' */
+}
+
+/* Header */
+header {
+  background-color: #d2c6ba;
+  grid-area: header;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  margin: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 75px;
+}
+
+/* Headings */
+body h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #9900ff;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+body h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0;
+  color: #9900ff;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/* Lists */
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Main content grid */
+#link {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  grid-area: content;
+  justify-items: center;
+  align-items: start;
+  overflow: hidden; /* Prevent scale overflow */
+}
+
+/* List Items */
+#link li {
+  border: 2px solid #9900ff;
+  border-radius: 50px;
+  background: #ce84ff;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#link li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+#link li:hover {
+  border: 2px solid #ce84ff;
+  background: #9900ff;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  position: relative;
+  grid-area: footer;
+  padding: 100px 20px 20px;
+  text-align: center;
+  color: #333;
+
+  /* Base background color */
+  background-color: #d2c6ba;
+
+  /* Convex bump SVG as background */
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 Q50,20 100,0 L100,20 L0,20 Z" fill="%23d2c6ba"/></svg>');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 60px;
+
+  overflow: visible;
+  z-index: 0; /* base layer */
+}
+
+/* Shadow that follows the bump shape */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  pointer-events: none;
+  z-index: -1;
+
+  /* Use the same bump shape path, but filled with transparent black for shadow */
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 Q50,20 100,0 L100,20 L0,20 Z" fill="rgba(0,0,0,0.15)"/></svg>');
+
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 60px;
+
+  filter: blur(6px);
+  transform: translateY(6px);
+}
+
+
+
+
+
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+  #link {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Futura Font Face */
+@font-face {
+  font-family: 'Futura';
+  src: url('path/to/Futura-Bold.woff2') format('woff2'),
+       url('path/to/Futura-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Optional class to apply Futura Bold manually */
+.my-bold-text {
+  font-family: 'Futura', sans-serif;
+  font-weight: 700;
+}
