@@ -6,6 +6,11 @@
     <meta name="description" content="HTML Cheatsheet page." />
     <meta name="author" content="Harrison Moss" />
     <title>HTML Cheatsheet</title>
+    <style>
+      input, textarea, label{
+        display:block;
+      }
+    </style>
   </head>
   <body>
     <h1>HTML5 Cheatsheet</h1>
@@ -100,6 +105,25 @@
     <section id="image">
       <h2>Image</h2>
       <img src="https://placekitten.com/200/300" alt="A cute kitten" />
+    </section>
+    <section id="form">
+      <h2>Form</h2>
+      <form action="processing-script.php" method="post">
+          <fieldset>
+            <legend>Personal Information</legend>
+            <label for="cust-name">Customer Name</label>
+            <input type="text" id="cust-name" id="cust-name" placeholder="501-555-5555"/>
+                        <label>Address:</label>
+            <textarea id="address" name="address"></textarea>
+            <label for="fav-color">Favorite Color</label>
+            <select id="fav-color" name="fav-color">
+              <option>Red</option>
+              <option>Green</option>
+              <option>Blue</option>
+              <option selected>---</option>
+            </select>
+          </fieldset>
+      </form>
     </section>
   </body>
 </html>

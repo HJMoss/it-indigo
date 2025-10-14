@@ -111,45 +111,7 @@ footer {
   padding: 100px 20px 20px;
   text-align: center;
   color: #333;
-
-  /* Base background color */
-  background-color: #d2c6ba;
-
-  /* Convex bump SVG as background */
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 Q50,20 100,0 L100,20 L0,20 Z" fill="%23d2c6ba"/></svg>');
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100% 60px;
-
-  overflow: visible;
-  z-index: 0; /* base layer */
 }
-
-/* Shadow that follows the bump shape */
-footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  pointer-events: none;
-  z-index: -1;
-
-  /* Use the same bump shape path, but filled with transparent black for shadow */
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 Q50,20 100,0 L100,20 L0,20 Z" fill="rgba(0,0,0,0.15)"/></svg>');
-
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100% 60px;
-
-  filter: blur(6px);
-  transform: translateY(6px);
-}
-
-
-
-
 
 
 /* Responsive Layout */
