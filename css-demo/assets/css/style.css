@@ -5,6 +5,11 @@ html {
   box-sizing: inherit;
 }
 
+/* ------------  Responsive Image -----------------*/
+img {
+  max-width:100%;
+}
+
 /* ------------  Utlity Classes -----------------*/
 
 .container{
@@ -101,9 +106,66 @@ text-shadow: 2px 2px #000;
 line-height:1.6;
 }
 
-#content h2, #content h3{
+#content h2, #content h3, .widget header h2{
   color:#161A59;
   border-left: 7.5px solid #d94179;
   border-radius:15px 0;
   padding:5px 7.5px 0 5px;
 }
+
+#blog{
+  background-color:#104d73;
+  padding:20px 0;
+  border-top:6px double #0a96a6;
+  border-bottom:6px double #0a96a6;
+}
+
+#blog > h2{
+  color:#ffffff;
+  text-shadow: 2px 2px #000000;
+  margin-left:20px;
+}
+
+#blog .post {
+  display:grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "figure header"
+    "figure post-content"
+    "figure footer";
+  margin:20px;
+  padding:20px;
+  background:#ffffff;
+}
+
+.post figure{
+  grid-area:figure;
+  margin:0 20px 0 0;
+}
+.post header{
+  grid-area:header;
+}
+.post .post-content{
+  grid-area:post-content;
+}
+.post .post-meta{
+  grid-area:footer;
+}
+
+aside .container {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:40px;
+}
+
+#colophon{
+background-image:url("https://assets.codepen.io/7248/bg_1.png"); 
+background-repeat:no-repeat;  
+background-size:cover; 
+padding:1px;
+text-align:center;
+color:#fff;  
+}
+
+
+

@@ -1,7 +1,28 @@
-form label {
-        display: inline-block;
-        width: 150px;
-        text-align: right;
-        padding: 5px;
-        font-weight: bold;
-    }
+.formlabel {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.radio-group label {
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+
+textarea {
+    margin-left: 160px;
+}
+
+input[type="submit"] {
+    margin-top: 15px;
+}
