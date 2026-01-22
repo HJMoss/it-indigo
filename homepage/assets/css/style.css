@@ -94,6 +94,7 @@ ul, li {
   border-radius: 50px;
   background: #ce84ff;
   padding: 20px;
+  width: 30rem;
   text-align: center;
   transition: transform 0.3s ease;
 }

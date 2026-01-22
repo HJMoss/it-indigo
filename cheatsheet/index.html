@@ -1,148 +1,416 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="HTML Cheatsheet page." />
-    <meta name="author" content="Harrison Moss" />
-    <title>HTML Cheatsheet</title>
-    <style>
-      input, textarea, label{
-        display:block;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>HTML5 Cheatsheet</h1>
-    <section id="headings">
-      <h2>Headings:</h2>
+<!-- This is a comment -->
+
+<head>
+  <title>Harrison Moss</title>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css"
+  <meta name="description" content="Keyword rich description of the site's purpose">
+  <meta name="author" content="Harrison Moss">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <h1>HTML5 Reference Document</h1>
+  </header>
+
+  <section id="headings">
+    <h2 class="section-heading">Headings</h2>
+    <div class="output">
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
       <h3>Heading 3</h3>
       <h4>Heading 4</h4>
       <h5>Heading 5</h5>
       <h6>Heading 6</h6>
-    </section>
-    <section id="lists">
-      <!-- Can nest list inside one another -->
-      <h2>Lists:</h2>
-      <h3>Unordered List</h3>
-      <ul>
-        <li>List Item</li>
-        <li>List Item</li>
-        <li>List Item</li>
-      </ul>
-      <h3>Ordered List</h3>
-      <ol>
-        <li>List Item</li>
-        <li>List Item</li>
-        <li>List Item</li>
-      </ol>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Exercitationem, sint vitae. Esse quisquam ad ex sapiente, deserunt
-        rerum, aut, sed porro amet minima ut molestiae? Quos autem molestias
-        perferendis animi sit sed dolor ipsa inventore laboriosam. Odio maxime
-        molestiae repellendus, nulla, voluptate animi eius mollitia sint, quis
-        asperiores dolor. Esse pariatur vero, repellat architecto ducimus
-        incidunt officiis, ut velit eveniet tempore distinctio eligendi iste.
-        Eum eligendi ut qui nesciunt sequi, facere eveniet reiciendis architecto
-        minima ex incidunt nobis rerum itaque? Consequuntur itaque a fugiat esse
-        non architecto quis, vero iste reiciendis, accusantium optio ratione
-        laborum veniam, sequi iusto voluptatem! Nihil, sed aliquid consectetur
-        quaerat dicta, deserunt sint tempora numquam iure porro minima atque
-        laborum! Deserunt, soluta saepe repellat autem, dolor eaque optio
-        quaerat dolores velit illo explicabo blanditiis at aliquam. Dignissimos
-        fuga deleniti incidunt quidem repellat quod? Quasi ipsam asperiores eos
-        debitis dignissimos corporis porro dolor, libero voluptate excepturi
-        sit!
-      </p>
-      <ol start="4">
-        <li>List Item</li>
-        <li>List Item</li>
-        <li>List Item</li>
-      </ol>
-      <h3>Definition List</h3>
-      <dl>
-        <dt>List Term</dt>
-        <dd>Description of the list term.</dd>
-        <dt>Another List Term</dt>
-        <dd>Description of another list term.</dd>
-        <dd>Additional description of the previous list term.</dd>
-        <dd>Another description of the previous list term.</dd>
-      </dl>
-    </section>
-    <section id="quotes">
-        <h2>Quotes</h2>
-        <h3>Blockquote</h3>
-        <blockquote cite="https://www.huxley.net/bnw/four.html">
-          Words can be like X-rays if you use them properly -- they’ll go
-          through anything. You read and you’re pierced.
-          <cite>― Aldous Huxley, Brave New World</cite>
-          </blockquote>
-          <h3>Inline Quote</h3>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <q>Molestiae voluptatum totam porro laudantium, vitae doloremque dolorem.</q> Esse earum id numquam.</p>
-    </section>
-    <section id="hyperlinks">
-      <h2>Hyperlinks</h2>
-      <ul>
-        <li><a href="about.html" title="This is a title for the link">Relative Link</a></li>
-        <li><a href="https://ualr.edu">Absolute Link</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Kitten#Nutrition" target="_blank">Anchor Link</a></li>
-        <li><a href="mailto:mail@ualr.edu">Email Link</a></li>
-      </ul>
-    </section>
-    <section id="table">
-      <h2>Table</h2>
-      <table border="1">
-        <tr><th>Item</th><th>Quantity</th><th>Cost</th></tr>
-        <tr><td>Food</td><td>12</td><td>.99</td></tr>
-        <tr><td>Food</td><td>12</td><td>.99</td></tr>
-        <tr><td>Food</td><td>12</td><td>.99</td></tr>
-        <tr><td>Food</td><td>12</td><td>.99</td></tr>
-      </table>
-    </section>
-    <section id="image">
-      <h2>Image</h2>
-      <img src="https://placekitten.com/200/300" alt="A cute kitten" />
-    </section>
-    <section id="form">
-      <h2>Form</h2>
-      <form action="processing-script.php" method="post">
-          <fieldset>
-            <legend>Personal Information</legend>
-            <label for="cust-name">Customer Name</label>
-            <input type="text" id="cust-name" id="cust-name" placeholder="501-555-5555"/>
-                        <label>Address:</label>
-            <textarea id="address" name="address"></textarea>
-            <label for="fav-color">Favorite Color</label>
-            <select id="fav-color" name="fav-color">
-              <option>Red</option>
-              <option>Green</option>
-              <option>Blue</option>
-              <option selected>---</option>
-            </select>
-          </fieldset>
-      </form>
-    </section>
-    <section id="semantics">
-      <h2>Text Level Semantics</h2>
-      <p>Lorem ipsum <del>dolor sit amet</del> consectetur adipisicing elit. <em>Sapiente vel modi animi</em> repellendus magni <strong>numquam iure ipsam quaerat</strong> quis natus minima nulla expedita veritatis consequatur cupiditate eaque eveniet ratione rem odio recusandae magnam, atque <sub>alias</sub>. Minus odit ipsam et <sup>ratione nulla</sup> est natus ad rerum incidunt earum, accusamus, iure dolorum?</p>
-    </section>
-    <section id="structural-elements">
-    <h2>Structural Elements</h2>
-    <!-- Preformat -->
-    <pre>
-<code>&lt;main&gt;</code>
-<code>&lt;section&gt;</code>
-<code>&lt;nav&gt;</code>
-<code>&lt;header&gt;</code>
-<code>&lt;footer&gt;</code>
-<code>&lt;aside&gt;</code>
-<code>&lt;article&gt;</code>
-<code>&lt;figure&gt;</code>
-<code>&lt;figcaption&gt;</code>
-    </pre>
+    </div>
+    <div class="markup">
+      <pre>
+    <code class="language-markup">
+ <script type="text/plain" class="language-markup">
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+   </script>
+    </code>
+</pre>
+    </div>
   </section>
-  </body>
+  <section id="images">
+    <h2 class="section-heading">Images</h2>
+    <div class="output">
+      <img src="https://thomaswallace.net/wp-content/uploads/2018/02/ualr.png" alt="UALR Logo">
+    </div>
+    <div class="markup">
+      <pre>
+    <code class="language-markup">
+ <script type="text/plain" class="language-markup">
+       <img src="https://thomaswallace.net/wp-content/
+       uploads/2018/02/ualr.png" alt="UALR Logo">
+   </script>
+    </code>
+</pre>
+    </div>
+  </section>
+  <section id="lists">
+    <h2 class="section-heading">Types of Lists</h2>
+    <h3 class="section-heading">Unordered List</h3>
+    <div class="output">
+      <ul>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+      </ul>
+    </div>
+    <div class="markup">
+      <pre>
+    <code class="language-markup">
+ <script type="text/plain" class="language-markup">
+    <ul>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+    </ul>
+   </script>
+    </code>
+</pre>
+    </div>
+    <h3 class="section-heading">Ordered List</h3>
+    <div class="output">
+           <ol>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+    </ol>
+    </div>
+    <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+    <ol>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+    </ol>
+       </script>
+    </code>
+    </pre>
+    </div>
+    <h3 class="section-heading">Definition List</h3>
+    <div class="output">
+     <dl>
+      <dt>Definition Term</dt>
+      <dd>Definition Description</dd>
+      <dd>Definition Description</dd>
+      <dd>Definition Description</dd>
+      <dt>Definition Term</dt>
+      <dd>Definition Description</dd>
+      <dd>Definition Description</dd>
+      <dt>Definition Term</dt>
+      <dd>Definition Description</dd>
+    </dl>
+    </div>
+    <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+     <dl>
+      <dt>Definition Term</dt>
+      <dd>Definition Description</dd>
+      <dd>Definition Description</dd>
+      <dd>Definition Description</dd>
+      <dt>Definition Term</dt>
+      <dd>Definition Description</dd>
+      <dd>Definition Description</dd>
+      <dt>Definition Term</dt>
+      <dd>Definition Description</dd>
+    </dl>
+       </script>
+    </code>
+    </pre>
+    </div>
+  </section>
+  <section id="hyperlinks">
+    <h2 class="section-heading">Hyperlinks</h2>
+    <div class="output">
+<ul>
+      <li><a href="https://ualr.edu" target="_blank" title="This is a verbose description of absolute link">Absolute Link</a></li>
+      <li><a href="resources/pages/about.html" target="_blank">Relative Link</a></li>
+      <li><a href="#top">Anchor Links</a></li>
+      <li><a href="mailto:email@address.com">Email Link</a></li>
+    </ul>
+    </div>
+    <div class="markup">
+      <pre>
+    <code class="language-markup">
+ <script type="text/plain" class="language-markup">
+    <ul>
+      <li><a href="https://ualr.edu" target="_blank" 
+      title="This is a verbose description of absolute 
+      link">Absolute Link</a></li>
+      <li><a href="resources/pages/about.html" 
+      target="_blank">Relative Link</a></li>
+      <li><a href="#top">Anchor Links</a></li>
+      <li><a href="mailto:email@address.com">
+      Email Link</a></li>
+    </ul>
+   </script>
+    </code>
+    </pre>
+    </div>
+  </section>
+  <section id="text-based-semantics">
+    <h2 class="section-heading">Text Based Sematics</h2>
+    <div class="output">
+        <p>
+      <em>Lorem Ipsum</em> is simply dummy text of the <strong>printing and typesetting industry</strong>. Lorem Ipsum has been the industry's standard <del>dummy text</del> ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of <sub>Lorem</sub><sup>Ipsum</sup>.
+    </p>
+    <address>
+      501 North Filmore<br />Little Rock, AR, 72205
+    </address>
+    </div>
+    <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+<p><em>Lorem Ipsum</em> is simply dummy text of the <strong>printing and
+typesetting industry</strong>. Lorem Ipsum has been the industry's 
+standard <del>dummy text</del> ever since the 1500s, when an unknown
+printer took a galley of type and scrambled it to make a type
+specimen book.It has survived not only five centuries, but 
+also the leap into electronic typesetting, remaining essentially
+unchanged.It was popularised in the 1960s with the release of
+Letraset sheets containing Lorem Ipsum passages, and more
+recently with desktop publishing software like Aldus 
+PageMaker including versions of <sub>Lorem</sub><sup>Ipsum</sup>.
+    </p>
+    <address>
+      501 North Filmore<br />Little Rock, AR, 72205
+    </address>
+       </script>
+    </code>
+    </pre>
+    </div>
+  </section>
+  <section id="tables">
+    <h2 class="section-heading">Tables</h2>
+    <div class="output">
+          <table border="1">
+      <caption>Groceries</caption>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Cost</th>
+      </tr>
+      <tr>
+        <td>Cheetos</td>
+        <td>12</td>
+        <td>.99</td>
+      </tr>
+      <tr>
+        <td>Cheetos</td>
+        <td>12</td>
+        <td>.99</td>
+      </tr>
+      <tr>
+        <td>Cheetos</td>
+        <td>12</td>
+        <td>.99</td>
+      </tr>
+    </table>
+    </div>
+    <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+      <table border="1">
+      <caption>Groceries</caption>
+      <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Cost</th>
+      </tr>
+      <tr>
+        <td>Cheetos</td>
+        <td>12</td>
+        <td>.99</td>
+      </tr>
+      <tr>
+        <td>Cheetos</td>
+        <td>12</td>
+        <td>.99</td>
+      </tr>
+      <tr>
+        <td>Cheetos</td>
+        <td>12</td>
+        <td>.99</td>
+      </tr>
+    </table>
+       </script>
+    </code>
+    </pre>
+    </div>
+  </section>
+  <section id="quotes">
+    <h2 class="section-heading">Quotes</h2>
+    <h3 class="section-heading">Blockquote</h3>
+    <div class="output">
+       <blockquote>If you can't explain it simply, you don't understand it well enough. <cite>Albert Einstein</cite>
+    </blockquote>
+    </div>
+    <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+       <blockquote>If you can't explain it simply, you don't 
+       understand it well enough. <cite>Albert Einstein</cite>
+       </blockquote>
+       </script>
+    </code>
+    </pre>
+    </div>
+    <h3 class="section-heading">Inline Quote</h3>
+    <div class="output">
+        <p><q>Honey tastes good,</q> said Pooh.</p>
+    </div>
+    <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+       <p><q>Honey tastes good</q> said Pooh.</p>
+       </script>
+    </code>
+    </pre>
+    </div>
+  </section>
+  <section id="forms">
+    <h2 class="section-heading">Forms</h2>
+        <div class="output">
+        <form action="processing-script.php" method="get">
+      <fieldset>
+        <legend>Sample Form Fields</legend>
+        <label for="first-name">First Name</label>
+        <input type="input" id="first-name" name="first-name" required>
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments"></textarea>
+        <label for="fav-car">Favorite Car Maker</label>
+        <select id="fav-car" name="fav-car">
+          <option value="F">Ford</option>
+          <option value="C">Chevy</option>
+          <option value="D">Dodge</option>
+          <option value="null" selected>---</option>
+        </select>
+        <input type="submit" value="Send">
+        <fieldset>
+          <legend>Select a maintenance drone:</legend>
+
+          <div>
+            <input type="radio" id="huey" name="drone" value="huey" checked>
+            <label for="huey">Huey</label>
+          </div>
+
+          <div>
+            <input type="radio" id="dewey" name="drone" value="dewey">
+            <label for="dewey">Dewey</label>
+          </div>
+
+          <div>
+            <input type="radio" id="louie" name="drone" value="louie">
+            <label for="louie">Louie</label>
+          </div>
+        </fieldset>
+
+      </fieldset>
+    </form>
+    </div>
+    <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+        <form action="processing-script.php" method="get">
+      <fieldset>
+        <legend>Sample Form Fields</legend>
+        <label for="first-name">First Name</label>
+        <input type="input" id="first-name" name="first-name" required>
+        <label for="comments">Comments</label>
+        <textarea id="comments" name="comments"></textarea>
+        <label for="fav-car">Favorite Car Maker</label>
+        <select id="fav-car" name="fav-car">
+          <option value="F">Ford</option>
+          <option value="C">Chevy</option>
+          <option value="D">Dodge</option>
+          <option value="null" selected>---</option>
+        </select>
+        <input type="submit" value="Send">
+        <fieldset>
+          <legend>Select a maintenance drone:</legend>
+          <div>
+            <input type="radio" id="huey" name="drone" value="huey" checked>
+            <label for="huey">Huey</label>
+          </div>
+          <div>
+            <input type="radio" id="dewey" name="drone" value="dewey">
+            <label for="dewey">Dewey</label>
+          </div>
+          <div>
+            <input type="radio" id="louie" name="drone" value="louie">
+            <label for="louie">Louie</label>
+          </div>
+        </fieldset>
+
+      </fieldset>
+    </form>
+       </script>
+    </code>
+    </pre>
+    </div>
+   
+  </section>
+      <section id="structural-elements">
+      <h2 class="section-heading">Structural Elements</h2>
+      <div class="output">
+      <code>&lt;main&gt;</code><br>
+      <code>&lt;header&gt;</code><br>
+      <code>&lt;footer&gt;</code><br>
+      <code>&lt;nav&gt;</code><br>
+      <code>&lt;section&gt;</code><br>
+      <code>&lt;article&gt;</code><br>
+      <code>&lt;aside&gt;</code><br>
+      <code>&lt;figure&gt;</code><br>
+      <code>&lt;figcaption&gt;</code>
+    </div>
+    <div class="markup">
+    <pre>
+    <code class="language-markup">
+       <script type="text/plain" class="language-markup">
+  <main>
+  <header>
+  <footer>
+  <nav>
+  <section>
+  <article>
+  <aside>
+  <figure>
+  <figcaption>
+       </script>
+    </code>
+    </pre>
+    </div>
+    </section>
+  <footer>&copy; 2022 Thomas Wallace</footer>
+</body>
 </html>
