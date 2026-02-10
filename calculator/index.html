@@ -4,9 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Harrison Moss">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
+<style>
+   .error {
+        color: red;
+        padding-left: 5px;
+   }
+</style>
     <title>JavaScript Calculator</title>
 </head>
 <body>
     <h1>JavaScript Calculator</h1>
+    <h2>Calculator</h2>
+
+    <label for="operand1" class="formlabel">Operand 1:</label>
+        <input type="text" id="operand1" name="operand1"
+               data-rule-required="true"  data-msg-required="Operand 1 is Required" 
+               data-rule-number="true" data-msg-number="Operand 1 must be floating point number" />
+        <label for="operand1" class="error" id="operand1error"></label>
+
+<form id="operator" onsubmit="return false">
+<label>Operator: </label>
+<label for="rd+"><input type="radio" id="rd+" name="rdoperator" value="+" 
+    data-rule-required="true" data-msg-required="Operator is Required" />+</label>
+<label for="rd-"><input type="radio" id="rd-" name="rdoperator" value="-" />-</label>
+<label for="rd*"><input type="radio" id="rd*" name="rdoperator" value="*" />*</label>
+<label for="rd/"><input type="radio" id="rd/" name="rdoperator" value="/" />/</label>
+<label for="rdoperator" class="error"></label>
+<span id="RadioValue"></span>
+<br>
+</form>
+
+        <label for="operand2" class="formlabel">Operand 2:</label>
+        <input type="text" id="operand2" name="operand2"
+               data-rule-required="true"  data-msg-required="Operand 2 is Required" 
+               data-rule-number="true" data-msg-number="Operand 2 must be floating point number" />
+        <label for="operand2" class="error" id="operand2error"></label>
+
+        <label for="result" class="formlabel">Result:</label>
+        <input type="text" id="result" name="result" readonly />
+
+        <input type="submit" value="calculate" name="calculate" onclick="calculate()">
+        <input type="submit" value="clear" name="clear" onclick="clearFields()">
+        
+        <script>
+            function clearFields() {
+            document.getElementById("operand1").value = "";
+            document.getElementById("operand2").value = "";
+            document.getElementById("result").value = "";
+            document.querySelectorAll('input[name="rdoperator"]').forEach(radio => {
+                radio.checked = false;
+            });
+            document.getElementById("RadioValue").innerHTML = "";
+            }
+        </script>
+
+
+<script>
+function RadioExample() {
+    if (document.getElementById("rd+").checked) {
+        document.getElementById("RadioValue").innerHTML = 
+            document.getElementById("rd+").value;
+    }
+    if (document.getElementById("rd-").checked) {
+        document.getElementById("RadioValue").innerHTML = 
+            document.getElementById("rd-").value;
+    }
+    if (document.getElementById("rd*").checked) {
+        document.getElementById("RadioValue").innerHTML = 
+            document.getElementById("rd*").value;
+    }
+    if (document.getElementById("rd/").checked) {
+        document.getElementById("RadioValue").innerHTML = 
+            document.getElementById("rd/").value;
+    }
+}
+
+function calculate() {
+    const operand1 = parseFloat(document.getElementById("operand1").value);
+    const operand2 = parseFloat(document.getElementById("operand2").value);
+    const operator = document.querySelector('input[name="rdoperator"]:checked').value;
+    
+    let result;
+    if (operator === "+") {
+        result = operand1 + operand2;
+    } else if (operator === "-") {
+        result = operand1 - operand2;
+    } else if (operator === "*") {
+        result = operand1 * operand2;
+    } else if (operator === "/") {
+        result = operand1 / operand2;
+    }
+    
+    document.getElementById("result").value = result;
+}
+
+
+$( "#RadioExampleValidationCheckForm" ).validate({
+
+});
+    </script>
+    
 </body>
 </html>
