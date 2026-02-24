@@ -1,3 +1,106 @@
+/* Reset browser spacing */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* default body font */
+}
+
+/* HEADER BANNER */
+.header-banner {
+    background: url("../img/hedgehog.svg") center/cover no-repeat;
+    height: 100vh;       /* full viewport height */
+    position: relative;
+    color: white;
+}
+
+/* OVERLAY FOR DARKENING */
+.overlay {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35); /* darkens image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TOP BAR (FULL-WIDTH, SEMI-TRANSPARENT) */
+.top-bar {
+    display: flex;
+    align-items: flex-end;  /* align lines slightly below text */
+    gap: 30px;
+    width: 100%;
+    background-color: rgba(217, 217, 217, 0.5); /* D9D9D9 at 50% opacity */
+    justify-content: center;
+    padding: 30px 0;       /* taller top bar */
+    position: absolute;     /* pinned at top */
+    top: 0;
+    left: 0;
+    font-family: 'Lilita One', cursive;
+}
+
+/* Decorative horizontal lines next to header text */
+.top-bar .line {
+    height: 6px;             /* thickness */
+    width: 20rem;             /* short lines */
+    background: white;
+    border-radius: 3px;      /* rounded ends */
+    align-self: flex-end;    /* push lines toward bottom of top bar */
+    margin-bottom: 20px;     /* adjust vertical position relative to text */
+}
+
+/* Logo and title */
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 30px;       /* space between logo and title */
+    font-family: 'Lilita One', cursive; /* branding font */
+}
+
+.logo-icon {
+    height: 120px;   /* bigger logo */
+}
+
+/* HEADER TEXT */
 h1 {
-    text-align: center;
+    font-size: 6rem;  /* huge hero text */
+    margin: 0;
+    font-family: 'Lilita One', cursive;
+}
+
+/* Ensure all spans inherit h1 size and font */
+h1 span {
+    font-size: inherit;
+    font-family: 'Lilita One', cursive;
+}
+
+/* Specific colors for text */
+h1 .hedge { color: #3A3A39; } /* Hedge gray */
+h1 .one   { color: #3A3A39; } /* 1's gray */
+h1 .zero  { color: #F9F9F9; } /* 0 white */
+
+/* Navigation below top bar */
+.main-nav {
+    margin-top: 180px;  /* push nav far below top bar for hero effect */
+    font-family: 'Lilita One', cursive;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;         /* spacing between links */
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    font-size: 2rem;   /* bigger nav text */
+    font-family: 'Lilita One', cursive;
+}
+
+.main-nav a:hover {
+    color: #3A3A39;
 }
