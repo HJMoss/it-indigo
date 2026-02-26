@@ -145,6 +145,8 @@ html, body {
     .logo-icon { height: 80px; }
 }
 
+
+
 /* Standard Mobile */
 @media (max-width: 768px) {
     .header-content { padding: 20px 0 10px 0; }
@@ -167,6 +169,8 @@ html, body {
     #menu-toggle:checked ~ .hamburger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 }
 
+
+
 /* --- SMALL MOBILE (375px) --- */
 @media (max-width: 400px) {
     .line { display: none; }
@@ -183,7 +187,7 @@ html, body {
 .hero-image-container {
     width: 100%;
     height: 100vh;
-    background: url("../img/hedgehog.svg") center/cover no-repeat;
+    background: url("../img/1114493.jpg") center/cover no-repeat;
 }
 
 main {
@@ -192,9 +196,7 @@ main {
     padding: 80px 20px;
 }
 
-/* =========================
-    6. INTRO GRID (SHORTHAND)
-========================= */
+
 .intro-grid {
     display: grid;
     grid-template: auto / 1fr 1fr 1fr; 
@@ -251,16 +253,11 @@ main {
     border-bottom: 1px solid #ccc;
 }
 
-/* =========================
-    7. MOBILE RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-    .intro-grid {
-        /* Switch to 1 column layout on mobile */
-        grid-template: auto / 1fr;
-    }
-    
-    .what-is-hedgehog, .basic-facts {
-        grid-column: 1 / 2; /* All elements take the full single column */
-    }
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #3A3A39;
+    color: #F9F9F9;
+    font-size: 14px;
 }
