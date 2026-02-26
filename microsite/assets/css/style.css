@@ -1,106 +1,266 @@
-/* Reset browser spacing */
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* default body font */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #F9F9F9;
+    overflow-x: hidden;
 }
 
-/* HEADER BANNER */
-.header-banner {
-    background: url("../img/hedgehog.svg") center/cover no-repeat;
-    height: 100vh;       /* full viewport height */
-    position: relative;
-    color: white;
-}
 
-/* OVERLAY FOR DARKENING */
-.overlay {
-    position: relative;
-    height: 100%;
+.header-content {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.35); /* darkens image */
+    z-index: 1000;
+    background-color: rgba(217, 217, 217, 0.7);
+    padding: 40px 0 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.4s ease-in-out;
 }
 
-/* TOP BAR (FULL-WIDTH, SEMI-TRANSPARENT) */
 .top-bar {
-    display: flex;
-    align-items: flex-end;  /* align lines slightly below text */
-    gap: 30px;
     width: 100%;
-    background-color: rgba(217, 217, 217, 0.5); /* D9D9D9 at 50% opacity */
-    justify-content: center;
-    padding: 30px 0;       /* taller top bar */
-    position: absolute;     /* pinned at top */
-    top: 0;
-    left: 0;
-    font-family: 'Lilita One', cursive;
 }
 
-/* Decorative horizontal lines next to header text */
-.top-bar .line {
-    height: 6px;             /* thickness */
-    width: 20rem;             /* short lines */
-    background: white;
-    border-radius: 3px;      /* rounded ends */
-    align-self: flex-end;    /* push lines toward bottom of top bar */
-    margin-bottom: 20px;     /* adjust vertical position relative to text */
-}
-
-/* Logo and title */
-.branding {
+.branding-row {
     display: flex;
-    align-items: center;
-    gap: 30px;       /* space between logo and title */
-    font-family: 'Lilita One', cursive; /* branding font */
+    align-items: flex-end; 
+    justify-content: center;
+    width: 100%;
+    padding: 0 40px; 
+    gap: 20px;
+}
+
+.line {
+    height: 6px;
+    flex-grow: 1; 
+    background: #F9F9F9;
+    min-width: 20px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    transition: all 0.4s ease;
+}
+
+.logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: flex-end; 
+    gap: 15px;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.03); 
 }
 
 .logo-icon {
-    height: 120px;   /* bigger logo */
+    height: 100px; 
+    width: auto;
+    transition: all 0.4s ease;
 }
 
-/* HEADER TEXT */
-h1 {
-    font-size: 6rem;  /* huge hero text */
+.branding h1 {
     margin: 0;
     font-family: 'Lilita One', cursive;
+    font-size: 80px; 
+    color: #F9F9F9;
+    text-transform: uppercase;
+    line-height: 0.8;
+    transition: all 0.4s ease;
 }
 
-/* Ensure all spans inherit h1 size and font */
-h1 span {
-    font-size: inherit;
-    font-family: 'Lilita One', cursive;
-}
+.hedge, .one { color: #3A3A39; }
+.zero { color: #F9F9F9; }
 
-/* Specific colors for text */
-h1 .hedge { color: #3A3A39; } /* Hedge gray */
-h1 .one   { color: #3A3A39; } /* 1's gray */
-h1 .zero  { color: #F9F9F9; } /* 0 white */
-
-/* Navigation below top bar */
 .main-nav {
-    margin-top: 180px;  /* push nav far below top bar for hero effect */
-    font-family: 'Lilita One', cursive;
+    margin-top: 25px;
+    transition: all 0.4s ease;
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    gap: 50px;         /* spacing between links */
-    padding: 0;
+    gap: 45px;
     margin: 0;
+    padding: 0;
 }
 
 .main-nav a {
+    display: inline-block; 
     text-decoration: none;
-    color: white;
-    font-weight: 800;
-    font-size: 2rem;   /* bigger nav text */
+    color: #3A3A39;
     font-family: 'Lilita One', cursive;
+    font-size: 30px;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .main-nav a:hover {
+    color: #F9F9F9; 
+    text-shadow: 2px 2px 10px #3A3A39; 
+    transform: scale(1.1); 
+}
+
+#menu-toggle, .hamburger {
+    display: none;
+}
+
+
+.header-content.scrolled {
+    background-color: #F9F9F980; 
+    padding: 0 5%;
+    flex-direction: row;        
+    justify-content: space-between; 
+    align-items: center;
+    height: 80px;
+}
+
+.header-content.scrolled .top-bar { width: auto; }
+.header-content.scrolled .branding-row { width: auto; padding: 0; margin: 0; }
+.header-content.scrolled .line { display: none; }
+
+.header-content.scrolled .branding {
+    border-bottom: 3px solid #3A3A39;
+    padding-bottom: 2px;
+}
+
+.header-content.scrolled .logo-icon { height: 40px; }
+.header-content.scrolled .branding h1 { font-size: 22px; }
+.header-content.scrolled .main-nav { margin-top: 0; }
+.header-content.scrolled .main-nav ul { gap: 20px; }
+.header-content.scrolled .main-nav a { font-size: 18px; }
+
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .branding h1 { font-size: 60px; }
+    .logo-icon { height: 80px; }
+}
+
+/* Standard Mobile */
+@media (max-width: 768px) {
+    .header-content { padding: 20px 0 10px 0; }
+    .branding h1 { font-size: 45px; }
+    .logo-icon { height: 60px; }
+    .branding-row { padding: 0 20px; gap: 10px; }
+
+    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 30px; height: 4px; background: #3A3A39; border-radius: 2px; transition: 0.4s; }
+
+    .main-nav ul {
+        display: none; flex-direction: column;
+        position: absolute; top: 100%; right: 0; width: 100%;
+        background: #F9F9F980; text-align: center; box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+    #menu-toggle:checked ~ ul { display: flex; }
+    
+    #menu-toggle:checked ~ .hamburger span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    #menu-toggle:checked ~ .hamburger span:nth-child(2) { opacity: 0; }
+    #menu-toggle:checked ~ .hamburger span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+}
+
+/* --- SMALL MOBILE (375px) --- */
+@media (max-width: 400px) {
+    .line { display: none; }
+    .branding-row { padding: 0 15px; justify-content: center; }
+    .logo-link { gap: 8px; }
+    .branding h1 {
+        font-size: 28px; 
+        letter-spacing: -1px; 
+    }
+    .logo-icon { height: 40px; }
+}
+
+
+.hero-image-container {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/hedgehog.svg") center/cover no-repeat;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* =========================
+    6. INTRO GRID (SHORTHAND)
+========================= */
+.intro-grid {
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr; 
+    gap: 40px;
+    margin-top: 60px;
+    align-items: start;
+}
+
+.what-is-hedgehog {
+    grid-column: 1 / 3; 
+}
+
+.what-is-hedgehog h2 {
+    font-family: 'Lilita One', cursive;
+    font-size: 42px;
     color: #3A3A39;
+    margin-bottom: 20px;
+}
+
+.what-is-hedgehog p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.intro-img {
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.basic-facts {
+    grid-column: 3 / 4;
+    background-color: #D9D9D940;
+    padding: 30px;
+    border-radius: 20px;
+    border-left: 5px solid #3A3A39;
+}
+
+.basic-facts h3 {
+    font-family: 'Lilita One', cursive;
+    font-size: 28px;
+    margin: 0 0 15px 0;
+}
+
+.basic-facts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.basic-facts li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+/* =========================
+    7. MOBILE RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+    .intro-grid {
+        /* Switch to 1 column layout on mobile */
+        grid-template: auto / 1fr;
+    }
+    
+    .what-is-hedgehog, .basic-facts {
+        grid-column: 1 / 2; /* All elements take the full single column */
+    }
 }
