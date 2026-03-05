@@ -128,6 +128,7 @@ html, body {
 
 .header-content.scrolled .branding {
     border-bottom: 3px solid #3A3A39;
+    text-shadow: 2px 2px 3px #3A3A39; 
     padding-bottom: 2px;
 }
 
@@ -254,10 +255,45 @@ main {
 }
 
 
+
+
 footer {
-    text-align: center;
-    padding: 20px 0;
     background-color: #3A3A39;
-    color: #F9F9F9;
-    font-size: 14px;
+    color: #ffffff;
+    padding: 20px 40px;
+    margin-top: 40px;
+    border-top: 3px solid #444;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-right p {
+    margin: 4px 0;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #a78bff;
 }
