@@ -10,7 +10,6 @@ window.addEventListener("scroll", function () {
 $(document).ready(function () {
 
     $('#Calculate').click(function () {
-        // Reset UI
         $('.error').text('');
         $('#ResultDisplay').text('');
 
@@ -57,3 +56,6 @@ $(document).ready(function () {
         $('#ResultDisplay').text('');
     });
 });
+
+
+
