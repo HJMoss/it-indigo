@@ -133,10 +133,10 @@ html, body {
 }
 
 .header-content.scrolled .logo-icon { height: 40px; }
-.header-content.scrolled .branding h1 { font-size: 22px; }
+.header-content.scrolled .branding h1 { font-size: 32px; }
 .header-content.scrolled .main-nav { margin-top: 0; }
 .header-content.scrolled .main-nav ul { gap: 20px; }
-.header-content.scrolled .main-nav a { font-size: 18px; }
+.header-content.scrolled .main-nav a { font-size: 24px; }
 
 
 
