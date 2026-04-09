@@ -1,0 +1,60 @@
+
+    body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #004a99;
+            margin-bottom: 10px;
+        }
+
+        .controls {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #fetchBtn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #fetchBtn:hover {
+            background-color: #0056b3;
+        }
+
+        #fetchBtn:active {
+            transform: translateY(1px);
+        }
+
+        #river-message {
+            margin-top: 20px;
+        }
+
+        /* Site card styling is handled via JS, but global styles help consistency */
+        .site-card h3 {
+            border-bottom: 2px solid #e0e8f0;
+            padding-bottom: 8px;
+            color: #004a99;
+        }

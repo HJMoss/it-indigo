@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo River Water Level Monitoring</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Buffalo National River</h1>
+            <p>Real-Time Hydrology Reporting System</p>
+        </header>
+
+        <div class="controls">
+            <button id="fetchBtn">Update Gage Data</button>
+        </div>
+
+        <div id="river-message">
+            <p style="text-align: center; color: #666;">
+                Select "Update Gage Data" to pull the latest 7-day trends from USGS stations.
+            </p>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
