@@ -1,31 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buffalo River Water Level Monitoring</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Harrison Moss, Patricia Frogoso, Jonas Mikeal">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Buffalo Advenure Co. content site">
+  <meta name="theme-color" content="#fafafa">
+    <title>How's the River? - Buffalo Adventure Co.</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Buffalo National River</h1>
-            <p>Real-Time Hydrology Reporting System</p>
-        </header>
+<nav class="main-nav">
+  <h1>
+    <a href="index.html">
+      <img src="buffalo-adventure-co/assets/img/buffalo-adventure-co-logo.png" alt="Logo" class="logo">
+      <div class="brand-text">
+        <span class="top-line">Buffalo</span>
+        <span class="bottom-line">Adventure Co.</span>
+      </div>
+    </a>
+  </h1>
+  <ul class="nav-links">
+    <li><a href="adventure.html">Plan Your Adventure!</a></li>
+    <li><a href="about.html">About the Region</a></li>
+    <li><a href="water-data.html">How's the River?</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <ul class="nav-cta">
+    <li><button class="book-now-btn">BOOK NOW</button></li>
+  </ul>
+</nav>
 
-        <div class="controls">
-            <button id="fetchBtn">Update Gage Data</button>
+<main>
+    <section class="water-hero">
+        <div class="hero-content">
+            <h2>How's The<br>River?</h2>
+            <p>Select a station below to view the 7-day trend. Ensure you click 'Sync Data' for the latest USGS updates.</p>
+            <button id="fetchBtn" class="update-btn">Sync USGS Data</button>
+            <div id="river-message">Ready to load 7-day trends.</div>
+        </div>
+    </section>
+
+    <div class="sub-header">Select a Station</div>
+    <section class="card-grid">
+        <div class="card" onclick="showChart(0)" style="background-image: url('img/boxley.jpg');"><span>Boxley</span></div>
+        <div class="card" onclick="showChart(1)" style="background-image: url('img/ponca.jpg');"><span>Ponca</span></div>
+        <div class="card" onclick="showChart(2)" style="background-image: url('img/pruitt.jpg');"><span>Pruitt</span></div>
+        <div class="card" onclick="showChart(3)" style="background-image: url('img/stjoe.jpg');"><span>St. Joe</span></div>
+        <div class="card" onclick="showChart(4)" style="background-image: url('img/harriet.jpg');"><span>Harriet</span></div>
+    </section>
+
+    <section class="charts-display-area">
+        <div id="container-0" class="chart-card">
+            <h3>Boxley Bridge Trend</h3>
+            <div class="chart-wrapper"><canvas id="chartjs-0"></canvas></div>
         </div>
 
-        <div id="river-message">
-            <p style="text-align: center; color: #666;">
-                Select "Update Gage Data" to pull the latest 7-day trends from USGS stations.
-            </p>
+        <div id="container-1" class="chart-card" style="display:none;">
+            <h3>Ponca Bridge Trend</h3>
+            <div class="chart-wrapper"><canvas id="chartjs-1"></canvas></div>
+        </div>
+
+        <div id="container-2" class="chart-card" style="display:none;">
+            <h3>Pruitt Bridge Trend</h3>
+            <div class="chart-wrapper"><canvas id="chartjs-2"></canvas></div>
+        </div>
+
+        <div id="container-3" class="chart-card" style="display:none;">
+            <h3>St. Joe Bridge Trend</h3>
+            <div class="chart-wrapper"><canvas id="chartjs-3"></canvas></div>
+        </div>
+
+        <div id="container-4" class="chart-card" style="display:none;">
+            <h3>Harriet Bridge Trend</h3>
+            <div class="chart-wrapper"><canvas id="chartjs-4"></canvas></div>
+        </div>
+    </section>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <img src="buffalo-adventure-co/assets/img/buffalo-adventure-co-logo.png" alt="Logo" class="footer-logo">
+            <div class="brand-text">
+                <span class="top-line">BUFFALO</span>
+                <span class="bottom-line">ADVENTURE CO.</span>
+            </div>
+        </div>
+        <nav class="footer-nav">
+            <a href="contact.html">CONTACT</a>
+            <a href="#">FAQ</a>
+            <a href="#">CANCELLATION POLICY</a>
+            <a href="#">RIVER MAP</a>
+        </nav>
+        <div class="footer-right">
+            <img src="buffalo-adventure-co/assets/img/national-park-logo.png" alt="NPS Logo" class="park-logo">
         </div>
     </div>
+    <div class="footer-bottom">
+        <p>© 2026 BUFFALO ADVENTURE CO. ALL RIGHTS RESERVED.</p>
+    </div>
+</footer>
 
-    <script src="assets/script.js"></script>
+<script>
+    var chart0, chart1, chart2, chart3, chart4;
+
+    // UI Toggle Logic
+    function showChart(index) {
+        for (var i = 0; i < 5; i++) {
+            document.getElementById('container-' + i).style.display = 'none';
+        }
+        document.getElementById('container-' + index).style.display = 'block';
+    }
+
+    // USGS Fetch Logic
+    document.getElementById('fetchBtn').onclick = function() {
+        var displayArea = document.getElementById('river-message');
+        displayArea.innerHTML = "Fetching USGS Data...";
+
+        var apiUrl = "https://api.waterdata.usgs.gov/ogcapi/v0/collections/continuous/items?f=json" +
+                     "&monitoring_location_id=USGS-07055646,USGS-07055660,USGS-07055680,USGS-07056000,USGS-07056700" +
+                     "&parameter_code=00065&time=P7D&limit=10000";
+
+        fetch(apiUrl)
+            .then(function(res) { return res.json(); })
+            .then(function(msg) {
+                displayArea.innerHTML = "Sync Complete. Select a station to view.";
+
+                function getSiteData(siteId) {
+                    var siteFeatures = msg.features.filter(f => f.properties.monitoring_location_id === siteId);
+                    // CHRONOLOGICAL SORT: Oldest to Newest
+                    siteFeatures.sort((a, b) => new Date(a.properties.time) - new Date(b.properties.time));
+                    
+                    var labels = [];
+                    var values = [];
+                    siteFeatures.forEach(f => {
+                        var date = new Date(f.properties.time);
+                        labels.push(date.toLocaleDateString([], {month:'numeric', day:'numeric'}));
+                        values.push(f.properties.value);
+                    });
+                    return { labels: labels, values: values };
+                }
+
+                // Render Chart 0
+                var d0 = getSiteData("USGS-07055646");
+                if (chart0) chart0.destroy();
+                chart0 = new Chart(document.getElementById("chartjs-0"), {
+                    type: "line",
+                    data: { labels: d0.labels, datasets: [{ label: "Height (ft)", data: d0.values, borderColor: "#66afa6", fill: true, backgroundColor: "rgba(102, 175, 166, 0.1)", tension: 0.3 }] },
+                    options: { responsive: true, maintainAspectRatio: false, elements: { point: { radius: 0 } } }
+                });
+
+                // Render Chart 1
+                var d1 = getSiteData("USGS-07055660");
+                if (chart1) chart1.destroy();
+                chart1 = new Chart(document.getElementById("chartjs-1"), {
+                    type: "line",
+                    data: { labels: d1.labels, datasets: [{ label: "Height (ft)", data: d1.values, borderColor: "#205562", fill: true, backgroundColor: "rgba(32, 85, 98, 0.1)", tension: 0.3 }] },
+                    options: { responsive: true, maintainAspectRatio: false, elements: { point: { radius: 0 } } }
+                });
+
+                // Render Chart 2
+                var d2 = getSiteData("USGS-07055680");
+                if (chart2) chart2.destroy();
+                chart2 = new Chart(document.getElementById("chartjs-2"), {
+                    type: "line",
+                    data: { labels: d2.labels, datasets: [{ label: "Height (ft)", data: d2.values, borderColor: "#a8160e", fill: true, backgroundColor: "rgba(168, 22, 14, 0.1)", tension: 0.3 }] },
+                    options: { responsive: true, maintainAspectRatio: false, elements: { point: { radius: 0 } } }
+                });
+
+                // Render Chart 3
+                var d3 = getSiteData("USGS-07056000");
+                if (chart3) chart3.destroy();
+                chart3 = new Chart(document.getElementById("chartjs-3"), {
+                    type: "line",
+                    data: { labels: d3.labels, datasets: [{ label: "Height (ft)", data: d3.values, borderColor: "#e67e22", fill: true, backgroundColor: "rgba(230, 126, 34, 0.1)", tension: 0.3 }] },
+                    options: { responsive: true, maintainAspectRatio: false, elements: { point: { radius: 0 } } }
+                });
+
+                // Render Chart 4
+                var d4 = getSiteData("USGS-07056700");
+                if (chart4) chart4.destroy();
+                chart4 = new Chart(document.getElementById("chartjs-4"), {
+                    type: "line",
+                    data: { labels: d4.labels, datasets: [{ label: "Height (ft)", data: d4.values, borderColor: "#8e44ad", fill: true, backgroundColor: "rgba(142, 68, 173, 0.1)", tension: 0.3 }] },
+                    options: { responsive: true, maintainAspectRatio: false, elements: { point: { radius: 0 } } }
+                });
+            });
+    };
+
+    // Auto-Sync on Load
+    document.getElementById('fetchBtn').click();
+</script>
 </body>
 </html>
