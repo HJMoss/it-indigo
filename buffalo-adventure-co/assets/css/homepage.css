@@ -27,6 +27,11 @@ body, p, li, a, button, input, h2, .section-title {
     font-weight: 700;
 }
 
+h2 a{
+    text-decoration: none;
+    color: #fff;
+}
+
 .top-line, 
 .bottom-line, 
 .buffalo, 
@@ -128,6 +133,8 @@ p {
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
+    text-decoration: none;
+
 }
 
 .book-now-btn:hover {
@@ -247,9 +254,7 @@ p {
     font-weight: 900;
     letter-spacing: 4px;
     margin-bottom: 50px;
-    text-transform: uppercase;
-    
-    /* Breaks out of padding to span whole page */
+    text-transform: uppercase;    
     position: relative;
     width: 100vw;
     left: 50%;
@@ -304,7 +309,6 @@ p {
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
-/* Background Image Assignments */
 .card-rentals { background-image: url('../img/rental-canoe.jpg'); }
 .card-lodging { background-image: url('../img/stay.jpg'); }
 .card-adventures { background-image: url('../img/explore.jpg'); }
@@ -362,16 +366,6 @@ p {
     display: block;
 }
 
-@media (max-width: 900px) {
-    .location-box {
-        flex-direction: column;
-        padding: 40px 20px;
-    }
-    .map-wrapper {
-        width: 100%;
-        height: 300px;
-    }
-}
 
 /* --- 7. Footer Section --- */
 .main-footer {

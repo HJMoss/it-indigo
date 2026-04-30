@@ -1,4 +1,4 @@
-/* 1. Global Reset & Body */
+/* 1. Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,26 +10,40 @@ html {
 }
 
 body {
-    background-color: #e1de96; /* Consistent Tan */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e1de96;
     color: #333;
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden; 
+    overflow-x: clip; 
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: 700;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* 2. Global Typography */
-body, p, li, a, button, input, h2, h3, .section-title {
+body, p, li, a, button, input, h2, .section-title {
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: 700;
 }
 
-.top-line, .bottom-line, .buffalo, .adventure, .water-hero h2 {
+.top-line, 
+.bottom-line, 
+.buffalo, 
+.adventure {
     font-family: 'Averia Serif Libre', serif;
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.top-line {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.bottom-line {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
 }
 
 p {
@@ -37,16 +51,20 @@ p {
     letter-spacing: 0.3px;
 }
 
-/* 3. Navigation Bar (Synchronized with Homepage) */
+
+/* 2. Navigation Bar */
 .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 50px 15px 50px;
-    background-color: #66afa6; /* Muted Aqua */
+    background-color: #66afa6;
     width: 100%;
+
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
+    left: 0;
     z-index: 99999; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
@@ -72,6 +90,19 @@ p {
     line-height: 1;
 }
 
+.top-line {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.bottom-line {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .nav-links, .nav-cta {
     list-style: none;
     display: flex;
@@ -82,24 +113,23 @@ p {
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 1rem; /* Fixed: No longer 0.9rem */
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-size: 1rem;
     letter-spacing: 0.5px;
-    transition: opacity 0.3s;
-}
-
-.nav-links li a:hover {
-    opacity: 0.8;
 }
 
 .book-now-btn {
     color: white;
-    background-color: #a8160e; /* Brand Red */
+    background-color: #a8160e;
     border: 2px solid #a8160e;
     border-radius: 15px;
     padding: 8px 20px;
     cursor: pointer;
     font-weight: bold;
     transition: 0.3s;
+    text-decoration: none;
+
 }
 
 .book-now-btn:hover {
@@ -108,9 +138,9 @@ p {
     border-color: white;
 }
 
-/* 4. Water Hero Section */
+/* 3. Water Hero Section */
 .water-hero {
-    background-color: #205562; /* Deep Teal */
+    background-color: #205562;
     color: white;
     padding: 80px 10%;
     text-align: center;
@@ -147,7 +177,7 @@ p {
     transform: scale(1.05);
 }
 
-/* 5. Selection Grid */
+/* 4. Selection Grid */
 .sub-header {
     background-color: #66afa6;
     color: white;
@@ -205,7 +235,7 @@ p {
     text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 
-/* 6. Chart Area */
+/* 5. Chart Area */
 .charts-display-area {
     padding: 0 10% 80px 10%;
 }
@@ -225,7 +255,7 @@ p {
     padding-bottom: 10px;
 }
 
-/* 7. Footer (Synchronized with Homepage) */
+/* 6. Foote */
 .main-footer {
     background-color: #205562;
     padding: 80px 5% 40px 5%;
@@ -299,4 +329,3 @@ p {
     letter-spacing: 1.5px;
     opacity: 0.9;
 }
-

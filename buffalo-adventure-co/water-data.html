@@ -18,22 +18,28 @@
 
 <nav class="main-nav">
   <h1>
-    <a href="index.html">
-      <img src="assets/img/buffalo-adventure-co-logo.png" alt="Logo" class="logo">
-      <div class="brand-text">
-        <span class="top-line">Buffalo</span>
-        <span class="bottom-line">Adventure Co.</span>
-      </div>
-    </a>
-  </h1>
+  <a href="index.html">
+    <img src="assets/img/buffalo-adventure-co-logo.png" alt="Buffalo Adventure Co. Logo" class="logo">
+    <div class="brand-text">
+      <span class="top-line">Buffalo</span>
+      <span class="bottom-line">Adventure Co.</span>
+    </div>
+  </a>
+</h1>
   <ul class="nav-links">
     <li><a href="adventure.html">Plan Your Adventure!</a></li>
     <li><a href="about.html">About the Region</a></li>
     <li><a href="water-data.html">How's the River?</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <ul class="nav-cta">
-    <li><button class="book-now-btn">BOOK NOW</button></li>
+<ul class="nav-cta">
+    <li>
+  <a href="https://patriciaanne98.wufoo.com/forms/zr04mpq1sx1z2a/" 
+     class="book-now-btn" 
+     target="_blank">
+     BOOK NOW
+  </a>
+</li>
   </ul>
 </nav>
 
@@ -49,11 +55,11 @@
 
     <div class="sub-header">Select a Station</div>
     <section class="card-grid">
-        <div class="card" onclick="showChart(0)" style="background-image: url('img/boxley.jpg');"><span>Boxley</span></div>
-        <div class="card" onclick="showChart(1)" style="background-image: url('img/ponca.jpg');"><span>Ponca</span></div>
-        <div class="card" onclick="showChart(2)" style="background-image: url('img/pruitt.jpg');"><span>Pruitt</span></div>
-        <div class="card" onclick="showChart(3)" style="background-image: url('img/stjoe.jpg');"><span>St. Joe</span></div>
-        <div class="card" onclick="showChart(4)" style="background-image: url('img/harriet.jpg');"><span>Harriet</span></div>
+        <div class="card" onclick="showChart(0)" style="background-image: url('assets/img/boxley.jpg');"><span>Boxley</span></div>
+        <div class="card" onclick="showChart(1)" style="background-image: url('assets/img/ponca.jpg');"><span>Ponca</span></div>
+        <div class="card" onclick="showChart(2)" style="background-image: url('assets/img/pruitt.jpg');"><span>Pruitt</span></div>
+        <div class="card" onclick="showChart(3)" style="background-image: url('assets/img/stjoe.jpg');"><span>St. Joe</span></div>
+        <div class="card" onclick="showChart(4)" style="background-image: url('assets/img/harriet.jpg');"><span>Harriet</span></div>
     </section>
 
     <section class="charts-display-area">
@@ -89,29 +95,30 @@
         <div class="footer-left">
             <img src="assets/img/buffalo-adventure-co-logo.png" alt="Logo" class="footer-logo">
             <div class="brand-text">
-                <span class="top-line">BUFFALO</span>
-                <span class="bottom-line">ADVENTURE CO.</span>
+                <span class="buffalo">BUFFALO</span>
+                <span class="adventure">ADVENTURE CO.</span>
             </div>
         </div>
+
         <nav class="footer-nav">
             <a href="contact.html">CONTACT</a>
-            <a href="#">FAQ</a>
-            <a href="#">CANCELLATION POLICY</a>
-            <a href="#">RIVER MAP</a>
+            <a href="cancel.html">FAQ</a>
+            <a href="cancel.html">CANCELLATION POLICY</a>
+            <a href="#">WATER LEVELS</a>
         </nav>
+
         <div class="footer-right">
-            <img src="assets/img/national-park-logo.png" alt="NPS Logo" class="park-logo">
+            <img src="assets/img/national-park-logo.png" alt="National Park Service" class="park-logo">
         </div>
     </div>
+
     <div class="footer-bottom">
         <p>© 2026 BUFFALO ADVENTURE CO. ALL RIGHTS RESERVED.</p>
     </div>
 </footer>
-
 <script>
     var chart0, chart1, chart2, chart3, chart4;
 
-    // UI Toggle Logic
     function showChart(index) {
         for (var i = 0; i < 5; i++) {
             document.getElementById('container-' + i).style.display = 'none';
@@ -119,7 +126,6 @@
         document.getElementById('container-' + index).style.display = 'block';
     }
 
-    // USGS Fetch Logic
     document.getElementById('fetchBtn').onclick = function() {
         var displayArea = document.getElementById('river-message');
         displayArea.innerHTML = "Fetching USGS Data...";
@@ -135,7 +141,6 @@
 
                 function getSiteData(siteId) {
                     var siteFeatures = msg.features.filter(f => f.properties.monitoring_location_id === siteId);
-                    // CHRONOLOGICAL SORT: Oldest to Newest
                     siteFeatures.sort((a, b) => new Date(a.properties.time) - new Date(b.properties.time));
                     
                     var labels = [];
@@ -148,7 +153,7 @@
                     return { labels: labels, values: values };
                 }
 
-                // Render Chart 0
+                // Chart 1
                 var d0 = getSiteData("USGS-07055646");
                 if (chart0) chart0.destroy();
                 chart0 = new Chart(document.getElementById("chartjs-0"), {
@@ -157,7 +162,7 @@
                     options: { responsive: true, maintainAspectRatio: false, elements: { point: { radius: 0 } } }
                 });
 
-                // Render Chart 1
+                // Chart 2
                 var d1 = getSiteData("USGS-07055660");
                 if (chart1) chart1.destroy();
                 chart1 = new Chart(document.getElementById("chartjs-1"), {
@@ -166,7 +171,7 @@
                     options: { responsive: true, maintainAspectRatio: false, elements: { point: { radius: 0 } } }
                 });
 
-                // Render Chart 2
+                // Chart 3
                 var d2 = getSiteData("USGS-07055680");
                 if (chart2) chart2.destroy();
                 chart2 = new Chart(document.getElementById("chartjs-2"), {
@@ -175,7 +180,7 @@
                     options: { responsive: true, maintainAspectRatio: false, elements: { point: { radius: 0 } } }
                 });
 
-                // Render Chart 3
+                // Chart 4
                 var d3 = getSiteData("USGS-07056000");
                 if (chart3) chart3.destroy();
                 chart3 = new Chart(document.getElementById("chartjs-3"), {
@@ -184,7 +189,7 @@
                     options: { responsive: true, maintainAspectRatio: false, elements: { point: { radius: 0 } } }
                 });
 
-                // Render Chart 4
+                // Chart 5
                 var d4 = getSiteData("USGS-07056700");
                 if (chart4) chart4.destroy();
                 chart4 = new Chart(document.getElementById("chartjs-4"), {
@@ -195,7 +200,6 @@
             });
     };
 
-    // Auto-Sync on Load
     document.getElementById('fetchBtn').click();
 </script>
 </body>

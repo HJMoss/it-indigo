@@ -8,9 +8,12 @@
   <meta name="description" content="Buffalo Advenure Co. content site">
   <title>Adventures - Buffalo Adventure Co.</title>
   <meta name="theme-color" content="#fafafa">
-  <title>Plan Your Adventure - Buffalo Adventure Co.</title>
   <link rel="stylesheet" href="assets/css/adventure.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&family=Barlow+Semi+Condensed:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -33,28 +36,30 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <ul class="nav-cta">
-    <li><button class="book-now-btn">BOOK NOW</button></li>
+    <li>
+      <a href="https://patriciaanne98.wufoo.com/forms/zr04mpq1sx1z2a/" class="book-now-btn" target="_blank">BOOK NOW</a>
+    </li>
   </ul>
 </nav>
 
 <main>
     <div class="category-bar">Activities <span>⌵</span></div>
     <section class="card-grid">
-        <a href="water-data.html" class="card" style="background-image: url('assets/img/group-float.jpg');">
+        <a href="https://www.nps.gov/buff/planyourvisit/river-accesses-mileage.htm" class="card" style="background-image: url('assets/img/group-float.jpg');">
             <span>FLOAT</span>
         </a>
-        <a href="#" class="card" style="background-image: url('assets/img/mtn-biking.jpg');">
+        <a href="https://www.trailforks.com/region/buffalo-national-river-32524/map/" class="card" style="background-image: url('assets/img/mtn-biking.jpg');">
             <span>MOUNTAIN BIKING</span>
         </a>
-        <a href="#" class="card" style="background-image: url('assets/img/fishing.jpg');">
+        <a href="https://www.nps.gov/buff/planyourvisit/fishing.htm" class="card" style="background-image: url('assets/img/fishing.jpg');">
             <span>FISHING</span>
         </a>
-        <a href="#" class="card" style="background-image: url('assets/img/hiking.jpg');">
+        <a href="https://www.trailforks.com/region/buffalo-national-river-32524/map/?activitytype=6&z=9.7&lat=36.00996&lon=-92.97978&content=trails,labels,region,poi,directory,polygon,eventpremium,waypoint,labels_popular,nst,routes_featured" class="card" style="background-image: url('assets/img/hiking.jpg');">
             <span>HIKING</span>
         </a>
     </section>
 
-    <div class="category-bar">Rentals & Rates</div>
+    <div class="category-bar" id="rentals">Rentals & Rates</div>
     <section class="info-split">
         <div class="info-text">
             <h2>Rental Pricing</h2>
@@ -79,29 +84,30 @@
         </div>
     </section>
 
-    <div class="category-bar">Getaways <span>⌵</span></div>
+    <div class="category-bar" id="getaways">Getaways <span>⌵</span></div>
     <section class="card-grid">
-        <a href="#" class="card" style="background-image: url('assets/img/stay.jpg');">
+        <a href="https://patriciaanne98.wufoo.com/forms/zr04mpq1sx1z2a/" class="card" style="background-image: url('assets/img/stay.jpg');">
             <span>CABINS</span>
         </a>
-        <a href="#" class="card" style="background-image: url('assets/img/amenities.jpg');">
+        <a href="https://patriciaanne98.wufoo.com/forms/zr04mpq1sx1z2a/" class="card" style="background-image: url('assets/img/amenities.jpg');">
             <span>AMENITIES</span>
         </a>
-        <a href="#" class="card" style="background-image: url('assets/img/living-room.jpg');">
+        <a href="https://patriciaanne98.wufoo.com/forms/zr04mpq1sx1z2a/" class="card" style="background-image: url('assets/img/living-room.jpg');">
             <span>LIVING ROOM</span>
         </a>
-        <a href="#" class="card" style="background-image: url('assets/img/kitchen.jpg');">
+        <a href="https://patriciaanne98.wufoo.com/forms/zr04mpq1sx1z2a/" class="card" style="background-image: url('assets/img/kitchen.jpg');">
             <span>KITCHEN</span>
         </a>
     </section>
 
-    <div class="category-bar" style="justify-content: center;">FLOAT</div>
+    <div class="category-bar" id="float" style="justify-content: center;">FLOAT</div>
+    
     <section class="carousel-container">
-        <button class="arrow-btn">‹</button>
-        <img src="assets/img/guy-on-water.jpg" class="carousel-img" alt="Kayaking">
-        <img src="assets/img/canoe-close.jpg" class="carousel-img" alt="Canoe detail">
-        <img src="assets/img/landscape-1.jpg" class="carousel-img" alt="River Landscape">
-        <button class="arrow-btn">›</button>
+        <div class="fade">
+            <div><img src="assets/img/guy-on-water.jpg" class="carousel-img" alt="Kayaking"></div>
+            <div><img src="assets/img/canoe-close.jpg" class="carousel-img" alt="Canoe detail"></div>
+            <div><img src="assets/img/landscape-1.jpg" class="carousel-img" alt="River Landscape"></div>
+        </div>
     </section>
 </main>
 
@@ -110,16 +116,16 @@
         <div class="footer-left">
             <img src="assets/img/buffalo-adventure-co-logo.png" alt="Logo" class="footer-logo">
             <div class="brand-text">
-                <span class="top-line">BUFFALO</span>
-                <span class="bottom-line">ADVENTURE CO.</span>
+                <span class="buffalo">BUFFALO</span>
+                <span class="adventure">ADVENTURE CO.</span>
             </div>
         </div>
 
         <nav class="footer-nav">
             <a href="contact.html">CONTACT</a>
-            <a href="#">FAQ</a>
-            <a href="#">CANCELLATION POLICY</a>
-            <a href="#">RIVER MAP</a>
+            <a href="cancel.html">FAQ</a>
+            <a href="cancel.html">CANCELLATION POLICY</a>
+            <a href="water-data.html">WATER LEVELS</a>
         </nav>
 
         <div class="footer-right">
@@ -131,6 +137,24 @@
         <p>© 2026 BUFFALO ADVENTURE CO. ALL RIGHTS RESERVED.</p>
     </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('.fade').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      fade: true,
+      slide: 'div',
+      cssEase: 'linear',
+      autoplay: true,
+      autoplaySpeed: 2000
+    });
+});
+</script>
 
 </body>
 </html>
