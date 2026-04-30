@@ -10,27 +10,23 @@ html {
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #e1de96;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 700;
     color: #333;
     width: 100%;
     min-height: 100vh;
-    overflow-x: clip; 
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    font-weight: 700;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+
 
 body, p, li, a, button, input, h2, .section-title {
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: 700;
 }
 
-h2 a{
-    text-decoration: none;
-    color: #fff;
-}
 
 .top-line, 
 .bottom-line, 
@@ -59,13 +55,16 @@ p {
 
 /* 2. Navigation Bar */
 .main-nav {
+    background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 50px 15px 50px;
     background-color: #66afa6;
     width: 100%;
-
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -80,6 +79,11 @@ p {
     gap: 15px;
     color: white;
     text-decoration: none;
+}
+
+.main-nav h1 a:hover {
+    color: #e1de96;
+    transition: 0.3s;
 }
 
 .logo {
@@ -124,6 +128,11 @@ p {
     letter-spacing: 0.5px;
 }
 
+.nav-links li a:hover {
+    color: #e1de96;
+    transition: 0.3s;
+}
+
 .book-now-btn {
     color: white;
     background-color: #a8160e;
@@ -147,7 +156,7 @@ p {
 .hero {
     height: 60vh;
     background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                url('../img/hero-image.jpg'); 
+    url('../img/hero-image.jpg'); 
     background-size: cover;
     background-position: center;
     display: flex;
@@ -165,11 +174,26 @@ p {
     text-align: center;
 }
 
+h2 a{
+    text-decoration: none;
+    color: #fff;
+}
+
+h2 a:hover{ 
+    font-size: larger;
+    color: #66afa6;
+    transition: 0.3s;
+}
+
 /* 4. Action Bar (Explore, Stay, Fun) */
 .action-bar {
     width: 100%;
     padding: 60px 10%; 
     background-color: #e1de96;
+        background-image: 
+    url('../img/so-white.png');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     letter-spacing: 3px;
     text-transform: uppercase;
 }
@@ -240,12 +264,20 @@ p {
 /* 5. Explore Section */
 .explore-section {
     background-color: #e1de96;
+        background-image: 
+    url('../img/so-white.png');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     width: 100%;
     padding: 0 10% 80px 10%;
     box-sizing: border-box;
 }
 
 .section-title {
+    background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     background-color: #205562;
     color: white;
     text-align: center;
@@ -333,6 +365,10 @@ p {
     display: flex;
     align-items: center;
     background-color: #205562;
+        background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     width: 85%;
     max-width: 1100px;
     border-radius: 10px;
@@ -370,6 +406,10 @@ p {
 /* --- 7. Footer Section --- */
 .main-footer {
     background-color: #205562;
+    background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     padding: 80px 5% 40px 5%;
     color: white;
     width: 100%;
@@ -421,6 +461,11 @@ p {
     font-weight: 800;
     font-size: 1.05rem;
     letter-spacing: 1px;
+}
+
+.footer-nav a:hover {
+    color: #e1de96;
+    transition: 0.3s;
 }
 
 .park-logo {

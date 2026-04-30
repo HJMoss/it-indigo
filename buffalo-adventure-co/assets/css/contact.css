@@ -14,6 +14,10 @@ html {
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #e1de96;
+        background-image: 
+    url('../img/so-white.png');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     color: #333;
     width: 100%;
     min-height: 100vh;
@@ -56,17 +60,17 @@ body, p, li, a, button, input, h2, .section-title {
     align-items: center;
     padding: 5px 50px 15px 50px;
     background-color: #66afa6;
-    width: 100%;    
-    position: fixed; 
-    top: 0; 
-    left: 0;  
-    margin-top: 0; 
+        background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
     z-index: 99999; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.main-nav h1 {
-    margin-top: 0;
 }
 
 .main-nav h1 a {
@@ -75,6 +79,11 @@ body, p, li, a, button, input, h2, .section-title {
     gap: 15px;
     color: white;
     text-decoration: none;
+}
+
+.main-nav h1 a:hover {
+    color: #e1de96;
+    transition: 0.3s;
 }
 
 .logo {
@@ -119,6 +128,11 @@ body, p, li, a, button, input, h2, .section-title {
     letter-spacing: 0.5px;
 }
 
+.nav-links li a:hover {
+    color: #e1de96;
+    transition: 0.3s;
+}
+
 .book-now-btn {
     color: white;
     background-color: #a8160e;
@@ -143,12 +157,16 @@ body, p, li, a, button, input, h2, .section-title {
     display: flex;
     width: 100%;
     min-height: 80vh;
-    margin-top: 80px;
+    margin-top: 0px;
 }
 
 .contact-left-side {
     flex: 1.2;
     background-color: #205562;
+        background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     color: white;
     padding: 80px 8%;
 }
@@ -202,6 +220,10 @@ body, p, li, a, button, input, h2, .section-title {
 .contact-right-side {
     flex: 0.8;
     background-color: #e1de96;
+        background-image: 
+    url('../img/so-white.png');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     padding: 80px 5%;
     display: flex;
     flex-direction: column;
@@ -240,6 +262,10 @@ body, p, li, a, button, input, h2, .section-title {
     display: flex;
     align-items: center;
     background-color: #205562;
+        background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     width: 85%;
     max-width: 1100px;
     border-radius: 10px;
@@ -276,6 +302,10 @@ body, p, li, a, button, input, h2, .section-title {
 /* --- 5. FOOTER!! --- */
 .main-footer {
     background-color: #205562;
+        background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     padding: 80px 5% 40px 5%;
     color: white;
     width: 100%;
@@ -327,6 +357,11 @@ body, p, li, a, button, input, h2, .section-title {
     font-weight: 800;
     font-size: 1.05rem;
     letter-spacing: 1px;
+}
+
+.footer-nav a:hover {
+    color: #e1de96;
+    transition: 0.3s;
 }
 
 .park-logo {

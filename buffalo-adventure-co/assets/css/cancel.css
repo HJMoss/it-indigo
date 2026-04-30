@@ -11,6 +11,10 @@ html {
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #e1de96;
+        background-image: 
+    url('../img/so-white.png');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     color: #333;
     width: 100%;
     min-height: 100vh;
@@ -51,15 +55,17 @@ p {
 }
 
 
-/* 2. Navigation Bar */
 .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 50px 15px 50px;
     background-color: #66afa6;
+        background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     width: 100%;
-
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -74,6 +80,11 @@ p {
     gap: 15px;
     color: white;
     text-decoration: none;
+}
+
+.main-nav h1 a:hover {
+    color: #e1de96;
+    transition: 0.3s;
 }
 
 .logo {
@@ -118,6 +129,11 @@ p {
     letter-spacing: 0.5px;
 }
 
+.nav-links li a:hover {
+    color: #e1de96;
+    transition: 0.3s;
+}
+
 .book-now-btn {
     color: white;
     background-color: #a8160e;
@@ -146,6 +162,10 @@ p {
 
 .hero-text {
   background-color: #155663;
+      background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
   color: white;
   padding: 70px 60px;
 }
@@ -180,14 +200,20 @@ p {
 .policy-section h2 {
   text-align: center;
   background-color: #155663;
+      background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
   color: white;
   padding: 16px;
+  border-radius: 15px;
   text-transform: uppercase;
   margin-bottom: 30px;
 }
 
 .faq-item {
   background-color: #f3efaa;
+  border-radius: 15px;
   border-left: 8px solid #155663;
   padding: 25px;
   margin-bottom: 22px;
@@ -212,6 +238,10 @@ p {
 
 .main-footer {
     background-color: #205562;
+        background-image: 
+    url('../img/grey_sandbag.webp');
+    background-repeat: repeat;
+    background-blend-mode: multiply;
     padding: 80px 5% 40px 5%;
     color: white;
     width: 100%;
@@ -263,6 +293,11 @@ p {
     font-weight: 800;
     font-size: 1.05rem;
     letter-spacing: 1px;
+}
+
+.footer-nav a:hover {
+    color: #e1de96;
+    transition: 0.3s;
 }
 
 .park-logo {
